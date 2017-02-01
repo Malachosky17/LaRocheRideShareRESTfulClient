@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LaRocheRideShareRESTfulClient.iml" filepath="$PROJECT_DIR$/.idea/modules/LaRocheRideShareRESTfulClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LaRocheRideShareRESTfulClient_main.iml" filepath="$PROJECT_DIR$/.idea/modules/LaRocheRideShareRESTfulClient_main.iml" group="LaRocheRideShareRESTfulClient" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LaRocheRideShareRESTfulClient_test.iml" filepath="$PROJECT_DIR$/.idea/modules/LaRocheRideShareRESTfulClient_test.iml" group="LaRocheRideShareRESTfulClient" />
+    </modules>
+  </component>
+</project>
