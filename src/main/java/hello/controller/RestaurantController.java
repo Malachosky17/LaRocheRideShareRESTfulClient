@@ -33,6 +33,17 @@ public class RestaurantController {
         mRestaurantList.add(new Restaurant(40.570110, -80.020967, "Convive Coffee"));
         mRestaurantList.add(new Restaurant(40.570129, -80.020742, "Gigi’s Cupcakes"));
         mRestaurantList.add(new Restaurant(40.569747, -80.021604, "Burgatory"));
+        mRestaurantList.add(new Restaurant(40.568840, -80.023364, "Chipotle"));
+        mRestaurantList.add(new Restaurant(40.569427, -80.024365, "IHOP"));
+        mRestaurantList.add(new Restaurant(40.569211, -80.024419, "DiBella’s Subs"));
+        mRestaurantList.add(new Restaurant(40.569073, -80.025038, "Handel’s Homemade Ice Cream"));
+        mRestaurantList.add(new Restaurant(40.575956, -80.026128, "Outback Steak house"));
+        mRestaurantList.add(new Restaurant(40.584911, -80.037238, "Taco Bell/KFC "));
+        mRestaurantList.add(new Restaurant(40.585348, -80.038436, "J. Clarks"));
+        mRestaurantList.add(new Restaurant(40.553131, -80.019361, "Olive Garden"));
+        mRestaurantList.add(new Restaurant(40.552242, -80.018919, "The Original Pancake House"));
+        mRestaurantList.add(new Restaurant(40.549701, -80.019280, "Mad Mex"));
+        mRestaurantList.add(new Restaurant(40.544793, -80.016047, "Eat’n Park"));
 
 
     }
