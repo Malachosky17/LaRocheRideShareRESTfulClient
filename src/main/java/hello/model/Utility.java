@@ -8,7 +8,7 @@ public class Utility {
     private final String name;
     private final double location[] = new double[2];
 
-    public Utility(double longitude, double latitude, String name) {
+    public Utility(double latitude, double longitude, String name) {
         this.name = name;
         this.location[0] = latitude;
         this.location[1] = longitude;

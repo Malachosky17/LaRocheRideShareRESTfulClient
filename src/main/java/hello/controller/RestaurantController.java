@@ -13,33 +13,10 @@ public class RestaurantController {
 
     private ArrayList<Restaurant> mRestaurantList = new ArrayList<>();
 
-//    @RequestMapping("/restaurants")
-//    public Restaurant restaurant(@RequestParam(value="name", defaultValue="") String name) {
-//        getRestaurantList();
-//        Restaurant restaurant = null;
-//        switch(name) {
-//            case "J.Clarks":
-//                restaurant = mRestaurantList.get(0);
-//                break;
-//            case "BJ's Restaurant and Brewhouse":
-//                restaurant = mRestaurantList.get(1);
-//                break;
-//        }
-//        return restaurant;
-//    }
-
     @RequestMapping("/restaurants")
-    public ArrayList<Restaurant> getMeRestaurants(@RequestParam(value="name", defaultValue="") String name) {
+    public ArrayList<Restaurant> getMeRestaurants() {
+        mRestaurantList.clear();
         getRestaurantList();
-//        Restaurant restaurant = null;
-//        switch(name) {
-//            case "J.Clarks":
-//                restaurant = mRestaurantList.get(0);
-//                break;
-//            case "BJ's Restaurant and Brewhouse":
-//                restaurant = mRestaurantList.get(1);
-//                break;
-//        }
         return mRestaurantList;
     }
 

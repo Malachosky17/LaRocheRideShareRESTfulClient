@@ -2,6 +2,7 @@ package hello.controller;
 
 import hello.model.Entertainment;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -15,33 +16,10 @@ public class EntertainmentController {
 
     private ArrayList<Entertainment> mEntertainmentList = new ArrayList<>();
 
-//    @RequestMapping("/entertainment")
-//    public Entertainment restaurant(@RequestParam(value="name", defaultValue="") String name) {
-//        getEntertainmentList();
-//        Entertainment playPlace = null;
-//        switch(name) {
-//            case "Cinemark North Hills and XD":
-//                playPlace = mEntertainmentList.get(0);
-//                break;
-//            case "Laser Storm Pittsburgh":
-//                playPlace = mEntertainmentList.get(1);
-//                break;
-//        }
-//        return playPlace;
-//    }
-
     @RequestMapping("/entertainment")
-    public ArrayList<Entertainment> getMeEntertainmentHotspots() {
+    public ArrayList<Entertainment> getMeEntertainment() {
+        mEntertainmentList.clear();
         getEntertainmentList();
-//        Entertainment playPlace = null;
-//        switch(name) {
-//            case "Cinemark North Hills and XD":
-//                playPlace = mEntertainmentList.get(0);
-//                break;
-//            case "Laser Storm Pittsburgh":
-//                playPlace = mEntertainmentList.get(1);
-//                break;
-//        }
         return mEntertainmentList;
     }
 
