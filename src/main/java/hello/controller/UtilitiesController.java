@@ -16,8 +16,9 @@ public class UtilitiesController {
 
     private ArrayList<Utility> mUtilityList = new ArrayList<>();
 
-    @RequestMapping("/utilities")
+    @RequestMapping("/locations/utilities")
     public ArrayList<Utility> getMeUtilities() {
+        System.out.println("hit utilities");
         mUtilityList.clear();
         buildUtilityList();
         return mUtilityList;

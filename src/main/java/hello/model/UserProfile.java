@@ -5,26 +5,27 @@ package hello.model;
  */
 public class UserProfile {
 
-    private String firstName;
+    private String fullName;
     private String emailAddress;
 
+    public UserProfile() {}
 
     public UserProfile(String name, String email) {
-        setFirstName(name);
+        setFullName(name);
         setEmailAddress(email);
         this.emailAddress = email;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFullName() {
+        return fullName;
     }
 
     public String getEmailAddress() {
         return emailAddress;
     }
 
-    public void setFirstName(String name) {
-        this.firstName = name;
+    public void setFullName(String name) {
+        this.fullName = name;
     }
 
     public void setEmailAddress(String email) {

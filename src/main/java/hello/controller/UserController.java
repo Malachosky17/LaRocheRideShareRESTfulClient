@@ -13,12 +13,23 @@ import java.util.Locale;
 @RestController
 public class UserController {
 
-    @RequestMapping(value="/user", method = RequestMethod.POST)
+    //ControllerAdvice used to handle exceptions through controllers
+
+    @RequestMapping(value="/admin/newUser", method = RequestMethod.POST)
     public ResponseEntity<UserProfile> update(@RequestBody UserProfile profile) {
-        System.out.println(String.format(Locale.ENGLISH, "FirstName: %s     Email: %s", profile.getFirstName(), profile.getEmailAddress()));
+        System.out.println(String.format(Locale.ENGLISH, "FullName: %s     Email: %s", profile.getFullName(), profile.getEmailAddress()));
         return new ResponseEntity<>(profile, HttpStatus.OK);
     }
 
+    @RequestMapping(value="/user/**")
+    public ResponseEntity<String> badUserRequest() {
+        return new ResponseEntity<>("Denied URL Request", HttpStatus.BAD_REQUEST);
+    }
+
+    @RequestMapping(value="/admin/**")
+    public ResponseEntity<String> badAdminRequest() {
+        return new ResponseEntity<>("Denied URL Request", HttpStatus.BAD_REQUEST);
+    }
 
     @RequestMapping("/user")
     public UserProfile getMeUsers(@RequestParam(value="studentID", defaultValue="") int studentID) {

@@ -13,8 +13,9 @@ public class RestaurantController {
 
     private ArrayList<Restaurant> mRestaurantList = new ArrayList<>();
 
-    @RequestMapping("/restaurants")
+    @RequestMapping("/locations/restaurants")
     public ArrayList<Restaurant> getMeRestaurants() {
+        System.out.println("hit restaurants");
         mRestaurantList.clear();
         getRestaurantList();
         return mRestaurantList;

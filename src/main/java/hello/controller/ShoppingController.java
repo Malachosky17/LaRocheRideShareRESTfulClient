@@ -14,7 +14,7 @@ import hello.model.Shopping;
 public class ShoppingController {
     private ArrayList<Shopping> mShoppingList = new ArrayList<>();
 
-    @RequestMapping("/shopping")
+    @RequestMapping("/locations/shopping")
     public ArrayList<Shopping> getMeShopping() {
         mShoppingList.clear();
         getShoppingList();

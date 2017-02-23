@@ -16,8 +16,9 @@ public class EntertainmentController {
 
     private ArrayList<Entertainment> mEntertainmentList = new ArrayList<>();
 
-    @RequestMapping("/entertainment")
+    @RequestMapping("/locations/entertainment")
     public ArrayList<Entertainment> getMeEntertainment() {
+        System.out.println("hit entertainment");
         mEntertainmentList.clear();
         getEntertainmentList();
         return mEntertainmentList;
