@@ -1,10 +1,17 @@
 package hello.model;
 
+import javax.persistence.*;
+
 /**
  * Created by Malac on 2/1/2017.
  */
+@Entity
+@Table(name = "user_profile")
 public class UserProfile {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long userId;
     private String fullName;
     private String emailAddress;
 
@@ -13,7 +20,6 @@ public class UserProfile {
     public UserProfile(String name, String email) {
         setFullName(name);
         setEmailAddress(email);
-        this.emailAddress = email;
     }
 
     public String getFullName() {
