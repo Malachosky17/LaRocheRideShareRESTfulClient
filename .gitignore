@@ -1,2 +1,12 @@
 /build/
 /bin/
+/gradle/
+/complete/
+/.settings/
+/.metadata/
+/.idea/
+*.classpath
+*.project
+*.bat
+*.yml
+*.cmd
