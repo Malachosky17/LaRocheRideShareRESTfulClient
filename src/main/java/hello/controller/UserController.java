@@ -1,6 +1,6 @@
 package hello.controller;
 
-import hello.doa.UserDoa;
+import hello.dao.UserDao;
 import hello.model.UserProfile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,7 +16,7 @@ import java.util.Locale;
 public class UserController {
 
     @Autowired
-    private UserDoa userDoa;
+    private UserDao userDao;
     //ControllerAdvice used to handle exceptions through controllers
 
     @RequestMapping(value="/admin/newUser", method = RequestMethod.POST)
@@ -36,7 +36,7 @@ public class UserController {
     }
 
     @RequestMapping("/user")
-    public UserProfile getMeUsers(@RequestParam(value="studentID", defaultValue="") int studentID) {
+    public UserProfile getMeUsers(@RequestParam(value="studentID", defaultValue="0") int studentID) {
         UserProfile user = null;
 //        switch(studentID) {
 //            case 555127:
@@ -48,6 +48,6 @@ public class UserController {
 //        }
         user = new UserProfile("Joe", "joe.shmoe@go.com");
 
-        return userDoa.save(user);
+        return userDao.save(user);
     }
 }
