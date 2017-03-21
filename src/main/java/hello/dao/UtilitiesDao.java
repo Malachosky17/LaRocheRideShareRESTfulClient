@@ -6,6 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 /**
  * Created by wargold419 on 3/21/17.
  */
-public class UtilitiesDao extends CrudRepository<Utility, Long> {
+public interface UtilitiesDao extends CrudRepository<Utility, Long> {
 
 }
