@@ -11,4 +11,5 @@ import javax.transaction.Transactional;
 @Transactional
 public interface UserDao extends CrudRepository<UserProfile, Long> {
     UserProfile findByEmailAddress(String emailAddress);
+
 }

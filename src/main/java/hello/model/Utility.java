@@ -1,17 +1,31 @@
 package hello.model;
 
+import javax.persistence.*;
+
 /**
  * Created by Malac on 1/25/2017.
  */
+@Entity
+@Table(name = "Utilities")
 public class Utility {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO);
+    private long utilityid;
+    @Column(nullable = false)
+    private String utilityName;
+    @Column(nullable = false)
+    private double longitude;
+    @Column(nullable = false)
+    private double latitude;
+
+
     private final String name;
-    private final double location[] = new double[2];
 
     public Utility(double latitude, double longitude, String name) {
         this.name = name;
-        this.location[0] = latitude;
-        this.location[1] = longitude;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public double[] getLocation() {

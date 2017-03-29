@@ -1,13 +1,28 @@
 package hello.model;
 
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Restaurants")
 public class Restaurant {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO);
+    private long restaurantid;
+    @Column(nullable = false)
+    private String restaurantName;
+    @Column(nullable = false)
+    private double longitude;
+    @Column(nullable = false)
+    private double latitude;
+
+
     private final String name;
-    private final double location[] = new double[2];
 
     public Restaurant(double latitude, double longitude, String name) {
-        this.location[0] = latitude;
-        this.location[1] = longitude;
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.name = name;
     }
 
