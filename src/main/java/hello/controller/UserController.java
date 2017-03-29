@@ -5,6 +5,7 @@ import hello.model.UserProfile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -36,14 +37,18 @@ public class UserController {
 
     @RequestMapping(value = "/admin/createUser")
     public String createUser(@RequestParam(value = "emailAddress", defaultValue = "") String emailAddress) {
-        UserProfile profile;
-        try {
-            profile = new UserProfile(parseName(emailAddress), emailAddress);
-            userDao.save(profile);
-        } catch(Exception e) {
-            return "Error in creating: " + emailAddress;
+        //Check if the user exists before adding them to MySQL.
+        UserProfile profile = getUserByEmail(emailAddress);
+        if(profile == null) {
+            try {
+                profile = new UserProfile(parseName(emailAddress), emailAddress);
+                userDao.save(profile);
+            } catch(Exception e) {
+                return "Error in creating: " + emailAddress;
+            }
+            return String.format("Successfully created: (id=%d, email=%s)", profile.getUserId(), profile.getEmailAddress());
         }
-        return String.format("Successfully created: (id=%d, email=%s)", profile.getUserId(), profile.getEmailAddress());
+        return "User already exists!";
     }
 
     @RequestMapping(value = "/admin/deleteUser")
