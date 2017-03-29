@@ -8,8 +8,8 @@ import javax.persistence.*;
 public class Restaurant {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO);
-    private long restaurantid;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long restaurantId;
     @Column(nullable = false)
     private String restaurantName;
     @Column(nullable = false)
@@ -18,19 +18,41 @@ public class Restaurant {
     private double latitude;
 
 
-    private final String name;
-
     public Restaurant(double latitude, double longitude, String name) {
         this.latitude = latitude;
         this.longitude = longitude;
-        this.name = name;
+        this.restaurantName = name;
     }
 
-    public double[] getLocation() {
-        return location;
+    public double getLatitude() {
+        return latitude;
     }
 
-    public String getName() {
-        return name;
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public String getShoppingName() {
+        return restaurantName;
+    }
+
+    public void setShoppingName(String shoppingName) {
+        this.restaurantName = shoppingName;
+    }
+
+    public long getRestaurantId() {
+        return restaurantId;
+    }
+
+    public void setRestaurantId(long shoppingId) {
+        this.restaurantId = shoppingId;
     }
 }

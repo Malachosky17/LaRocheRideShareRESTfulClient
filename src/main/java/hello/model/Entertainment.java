@@ -7,12 +7,12 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table(name = "Entertainment")
+@Table(name = "entertainment")
 public class Entertainment {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO);
-    private long entertainmentid;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long entertainmentId;
     @Column(nullable = false)
     private String entertainmentName;
     @Column(nullable = false)
@@ -21,20 +21,41 @@ public class Entertainment {
     private double latitude;
 
 
-
-    private final String name;
-
     public Entertainment(double latitude, double longitude, String name) {
         this.latitude = latitude;
         this.longitude = longitude;
-        this.name = name;
+        this.entertainmentName = name;
     }
 
-    public double[] getLocation() {
-        return location;
+    public double getLatitude() {
+        return latitude;
     }
 
-    public String getName() {
-        return name;
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public String getEntertainmentName() {
+        return entertainmentName;
+    }
+
+    public void setEntertainmentName(String entertainmentName) {
+        this.entertainmentName = entertainmentName;
+    }
+
+    public long getEntertainmentId() {
+        return entertainmentId;
+    }
+
+    public void setEntertainmentId(long entertainmentId) {
+        this.entertainmentId = entertainmentId;
     }
 }

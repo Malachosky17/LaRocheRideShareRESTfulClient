@@ -6,12 +6,12 @@ import javax.persistence.*;
  * Created by Malac on 1/25/2017.
  */
 @Entity
-@Table(name = "Utilities")
+@Table(name = "utilities")
 public class Utility {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO);
-    private long utilityid;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long utilityId;
     @Column(nullable = false)
     private String utilityName;
     @Column(nullable = false)
@@ -20,19 +20,41 @@ public class Utility {
     private double latitude;
 
 
-    private final String name;
-
     public Utility(double latitude, double longitude, String name) {
-        this.name = name;
+        this.utilityName = name;
         this.latitude = latitude;
         this.longitude = longitude;
     }
 
-    public double[] getLocation() {
-        return location;
+    public double getLatitude() {
+        return latitude;
     }
 
-    public String getName() {
-        return name;
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public String getUtilityName() {
+        return utilityName;
+    }
+
+    public void setUtilityName(String shoppingName) {
+        this.utilityName = shoppingName;
+    }
+
+    public long getUtilityId() {
+        return utilityId;
+    }
+
+    public void setUtilityId(long shoppingId) {
+        this.utilityId = shoppingId;
     }
 }
